@@ -101,3 +101,6 @@ int main()
 	imprime(v2);
 }
 ```
+
+![Imagen](![image](https://github.com/user-attachments/assets/98ea3fd1-b496-437b-af9f-99dca7854dfe)
+)
