@@ -33,7 +33,7 @@ void imprime(vector<int> v) {
 
 int main()
 {
-	/*
+	
 	vector<int> v;
 
 	//llenar el vector con 0, cinco veces
@@ -82,7 +82,7 @@ int main()
 
 	v.clear(); 
 	imprime(v);
-	*/
+	
 
 
 	//swap entre dos vectores
