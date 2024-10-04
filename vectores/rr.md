@@ -145,3 +145,73 @@ void imprime(vector<int> v) {
     system("cls");
 }  
 ```
+```c++
+#include <iostream>
+#include <vector>
+#include <random>
+#include <chrono>
+
+using namespace std;
+using namespace std::chrono;
+
+//Funcion Prototipo
+
+void burbuja(vector<double>& v);
+
+void imprime(vector<double> v);
+
+
+int main()
+{
+	//Vector con 1000 elementos
+
+	vector<double> v1000;
+	random_device rd;
+	default_random_engine gen(rd());
+	uniform_real_distribution<double> distribution(1.5, 1.90);
+
+	//Generar 1000 datos con una instrucción cíclica
+
+	for (int i = 0; i < 1000; i++) {
+		double num = distribution(gen);
+		v1000.push_back(num);
+	}
+
+	imprime(v1000);
+
+	// Ordenar el vector usando Bubble Sort
+	burbuja(v1000);
+
+	imprime(v1000);
+
+
+}
+
+void burbuja(vector<double>& v) {
+	int n = v.size();
+	for (int i = 0; i < n - 1; i++) {
+		bool swapped = false; // Para rastrear si hubo intercambios
+		for (int j = 0; j < n - i - 1; j++) {
+			if (v[j] > v[j + 1]) {
+				swap(v[j], v[j + 1]); // Intercambiar elementos
+				swapped = true;
+			}
+		}
+		if (!swapped) { // Si no hubo intercambios, la lista ya está ordenada
+			break;
+		}
+	}
+}
+
+
+void imprime(vector<double> v) {
+	for (auto elemento : v)
+	{
+		cout << elemento << ", ";
+	}
+	cout << endl;
+	system("pause");
+	system("cls");
+}
+
+```
