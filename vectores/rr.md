@@ -101,3 +101,47 @@ int main()
 	imprime(v2);
 }
 ```
+
+M4
+
+```
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+//Funciones Prototipo
+
+void imprime(vector<int> v);
+void cargaValores(vector<int>& v);
+
+int main()
+{
+
+    vector<int> v;
+
+    //llenar el vector con 0, cinco veces
+
+    v.assign(5, 0);
+    imprime(v);
+
+    cargaValores(v);
+    imprime(v);
+}
+
+void cargaValores(vector<int>& v) {
+    for (int i = 0; i <= 4; i++) {
+        v[i] = i + 1;
+    }
+}
+
+void imprime(vector<int> v) {
+    for (auto elemento : v)
+    {
+        cout << elemento << ", ";
+    }
+    cout << endl;
+    system("pause");
+    system("cls");
+}  
+```
