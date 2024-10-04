@@ -104,7 +104,7 @@ int main()
 
 M4
 
-```
+```c++
 #include <iostream>
 #include <vector>
 
