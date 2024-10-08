@@ -160,6 +160,10 @@ void burbuja(vector<double>& v);
 
 void seleccion(vector<double>& v);
 
+void insertionSort(vector<double>& v);
+
+void quickSort(vector<double>& v, int left, int right);
+
 void imprime(vector<double> v);
 
 
@@ -192,6 +196,40 @@ int main()
 
 	imprime(v1000);
 
+}
+
+void quickSort(vector<double>& v, int left, int right) {
+	int i = left, j = right;
+	double pivot = v[(left + right) / 2];
+
+	while (i <= j) {
+		while (v[i] < pivot) i++;
+		while (v[j] > pivot) j--;
+		if (i <= j) {
+			swap(v[i], v[j]);
+			i++;
+			j--;
+		}
+	}
+
+	if (left < j) quickSort(v, left, j);
+	if (i < right) quickSort(v, i, right);
+}
+
+void insertionSort(vector<double>& v)
+{
+	int n = v.size();
+	for (int i = 1; i < n; i++)
+	{
+		double key = v[i];
+		int j = i - 1;
+		while (j >= 0 && v[j] > key)
+		{
+			v[j + 1] = v[j];
+			j--;
+		}
+		v[j + 1] = key;
+	}
 }
 
 void seleccion(vector<double>& v) {
