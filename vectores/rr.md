@@ -158,6 +158,8 @@ using namespace std::chrono;
 
 void burbuja(vector<double>& v);
 
+void seleccion(vector<double>& v);
+
 void imprime(vector<double> v);
 
 
@@ -172,33 +174,60 @@ int main()
 
 	//Generar 1000 datos con una instrucción cíclica
 
-	for (int i = 0; i < 1000; i++) {
+	for (int i = 0; i < 1000000; i++) {
 		double num = distribution(gen);
 		v1000.push_back(num);
 	}
 
 	imprime(v1000);
 
-	// Ordenar el vector usando Bubble Sort
-	burbuja(v1000);
+	auto start1000 = high_resolution_clock::now();
+	seleccion(v1000);
+	auto stop1000 = high_resolution_clock::now();
+	auto duration1000 = duration_cast<milliseconds>(stop1000 - start1000);
+
+	cout << "Duración " << duration1000.count();
+	
+	cout << endl;
 
 	imprime(v1000);
 
+}
 
+void seleccion(vector<double>& v) {
+	int indiceMin = 0;
+
+	for (int i = 0; i < v.size(); i++) {
+		indiceMin = i;
+		
+		for (int j = i; j < v.size(); j++) {
+			
+			if (v[j] < v[indiceMin]) {
+				indiceMin = j;
+			}
+		}
+
+		double temp = v[indiceMin];
+		v[indiceMin] = v[i];
+		v[i] = temp;
+	}
 }
 
 void burbuja(vector<double>& v) {
-	int n = v.size();
-	for (int i = 0; i < n - 1; i++) {
-		bool swapped = false; // Para rastrear si hubo intercambios
-		for (int j = 0; j < n - i - 1; j++) {
-			if (v[j] > v[j + 1]) {
-				swap(v[j], v[j + 1]); // Intercambiar elementos
-				swapped = true;
+	double temp = 0;
+	bool swapp = true;
+
+	while(swapp) {
+		swapp = false;
+		
+		for (int i = 0; i < v.size() - 1; i++) {
+			
+			if (v[i] > v[i + 1]) {
+				temp = v[i + 1];
+				v[i + 1] = v[i];
+				v[i] = temp;
+				swapp = true;
 			}
-		}
-		if (!swapped) { // Si no hubo intercambios, la lista ya está ordenada
-			break;
 		}
 	}
 }
