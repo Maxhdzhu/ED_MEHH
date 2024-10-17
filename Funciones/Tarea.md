@@ -1,4 +1,4 @@
-##Cajero SN Funciones
+## Cajero SN Funciones
 
 ```c++
 #include <iostream>
@@ -74,7 +74,7 @@ int main()
 
 ```
 
-##Cajero CN Funciones
+## Cajero CN Funciones
 
 ```c++
 #include <iostream>
@@ -161,7 +161,7 @@ void menu()
 }
 ```
 
-##Calculadora
+## Calculadora
 
 ```c++
 #include <iostream>
@@ -275,7 +275,7 @@ void ingreseNumeros(double& num1, double& num2) {
 }
 ```
 
-##Calculadora de Areas
+## Calculadora de Areas
 
 ```c++
 #include <iostream>
