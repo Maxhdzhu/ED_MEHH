@@ -1,155 +1,80 @@
-## Cajero SN Funciones
+## Cajero 
 
 ```c++
 #include <iostream>
 
 using namespace std;
 
-//Variables Goblales
-
-double saldo = 5000;
-
-int main()
-{
-	
-	int opcion, pin;
-	double retiro = 0, deposito = 0;
-
-	cout << "CAJERO" << endl;
-	cout << "Ingrese el PIN para acceder a su cuenta" << endl;
-	cin >> pin;
-
-	if (pin == 1234) {
-
-			cout << "Bienvenido al cajero automatico" << endl;
-			cout << "MENU" << endl;
-			cout << "1. Consultar saldo" << endl;
-			cout << "2. Retirar" << endl;
-			cout << "3. Depositar" << endl;
-			cout << "4. Salir" << endl;
-			cout << "Seleccione una opcion: ";
-			cin >> opcion;
-			cout << "La opcion seleccionada es: " << opcion << endl;
-
-			if (opcion == 1) {
-				cout << "El saldo actual es: " << saldo << endl;
-			}
-
-			if (opcion == 2) {
-
-				cout << "Cantidad a retirar" << endl;
-				cin >> retiro;
-
-				if (retiro > saldo)
-				{
-					cout << "Saldo insuficiente" << endl;
-				}
-				else
-				{
-					saldo = saldo - retiro;
-				}
-				cout << "Su saldo actual es: " << saldo << endl;
-			}
-
-			if (opcion == 3) {
-
-				cout << "Cantidad a depositar" << endl;
-				cin >> deposito;
-
-				saldo = saldo + deposito;
-				cout << "Su saldo actual es: " << saldo << endl;
-			}
-
-			if (opcion == 4) {
-				cout << "Sesion cerrada" << endl;
-			}
-	}
-
-	else {
-		cout << "PIN Incorrecto" << endl;
-	}
-
-}
-
-
-```
-
-## Cajero CN Funciones
-
-```c++
-#include <iostream>
-
-using namespace std;
-
-//Variable global. Se definen fuera de cualquier función
-
+// Variables Globales
 int opcion;
-double retiro, deposito;
+double saldoActual = 5000, retiro, deposito;
 
-//Función prototipo
-
+// Funciones prototipo
 void menu();
 void imprimeSaldo(double saldo1);
-void retirar(double saldo1, double& sa);
-void depositar(double deposito, double& sa);
+void retirar(double& saldo1);
+void depositar(double& saldo1);
 
 int main()
 {
-	double saldoActual = 5000;
-	
-	menu();
+	do
+	{
 
-	switch (opcion){
+		menu();
+
+		switch (opcion){
 
 		case 1:
 			imprimeSaldo(saldoActual);
 			break;
 
 		case 2:
-			cout << "Ingrese el monto a retirar: ";
-			cin >> retiro;
-			retirar(retiro, saldoActual);
+			retirar(saldoActual);
 			break;
 
 		case 3:
-			cout << "Ingrese el monto a depositar: ";
-			cin >> deposito;
-			depositar(deposito, saldoActual);
+			depositar(saldoActual);
 			break;
-
-		case 4:
-			cout << "Sesion Cerrada"
-				break;
 
 		default:
 			cout << "Opcion Incorrecta" << endl;
-			break;
 		}
+
+	} while (opcion != 4);
 }
 
-void depositar(double deposito1, double& sa)
-{
-	sa = sa + deposito1;
-	cout << "Su saldo actual es: " << sa << endl;
+// Definicion de la funcion
+
+void depositar (double& saldo1) {
+
+	cout << "Ingrese el monto a depositar: ";
+	cin >> deposito;
+	saldoActual = saldoActual + deposito;
+	cout << "Su saldo actual es: " << saldoActual << endl;
 }
-void retirar(double retiro1, double& sa)
-{
-	if (retiro1 > sa)
+
+void retirar (double& saldoActual) {
+
+	cout << "Ingrese el monto a retirar: ";
+	cin >> retiro;
+	if (retiro > saldoActual)
 	{
 		cout << "Saldo insuficiente" << endl;
 	}
 	else
 	{
-		sa = sa - retiro1;
+		saldoActual = saldoActual - retiro;
 	}
-	cout << "Su saldo actual es: " << sa << endl;
+	cout << "Su saldo actual es: " << saldoActual << endl;
 }
-void imprimeSaldo(double saldo1)
-{
+
+void imprimeSaldo (double saldo1){
+
 	cout << "El saldo actual es: " << saldo1 << endl;
 }
-void menu()
-{
+
+void menu() {
+
 	cout << "Bienvenido al cajero automatico" << endl;
 	cout << "1. Consultar saldo" << endl;
 	cout << "2. Retirar" << endl;
@@ -157,8 +82,9 @@ void menu()
 	cout << "4. Salir" << endl;
 	cout << "Seleccione una opcion: ";
 	cin >> opcion;
-	cout << "La opcion seleccionada es: " << opcion << endl;
+
 }
+
 ```
 
 ## Calculadora
