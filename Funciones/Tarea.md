@@ -203,7 +203,7 @@ void ingreseNumeros(double& num1, double& num2) {
 
 ## Funciones Overloading
 
-###HEADER
+### HEADER
 
 ```c++
 #ifndef Header.h
@@ -404,7 +404,7 @@ void divi(float a, double b)
 #endif // !Header.h
 ```
 
-###MAIN
+### MAIN
 
 ```c++
 #include <iostream>
