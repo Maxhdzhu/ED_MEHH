@@ -201,6 +201,270 @@ void ingreseNumeros(double& num1, double& num2) {
 }
 ```
 
+## Funciones Overloading
+
+###HEADER
+
+```c++
+#ifndef Header.h
+
+#define Header.h
+
+#include <iostream>
+
+using namespace std;
+
+
+// Definicion de la funcion
+
+//Sumas
+
+void suma(int a, int b)
+{
+	cout << a + b << endl;
+}
+void suma(double a, double b)
+{
+	cout << a + b << endl;
+}
+
+void suma(float a, float b)
+{
+	cout << a + b << endl;
+}
+
+void suma(double a, int b)
+{
+	cout << a + b << endl;
+}
+
+void suma(int a, double b)
+{
+	cout << a + b << endl;
+}
+
+void suma(float a, int b)
+{
+	cout << a + b << endl;
+}
+
+void suma(int a, float b)
+{
+	cout << a + b << endl;
+}
+
+void suma(double a, float b)
+{
+	cout << a + b << endl;
+}
+
+void suma(float a, double b)
+{
+	cout << a + b << endl;
+}
+
+//Restas
+
+void resta(int a, int b)
+{
+	cout << a - b << endl;
+}
+void resta(double a, double b)
+{
+	cout << a - b << endl;
+}
+
+void resta(float a, float b)
+{
+	cout << a - b << endl;
+}
+
+void resta(double a, int b)
+{
+	cout << a - b << endl;
+}
+
+void resta(int a, double b)
+{
+	cout << a - b << endl;
+}
+
+void resta(float a, int b)
+{
+	cout << a - b << endl;
+}
+
+void resta(int a, float b)
+{
+	cout << a - b << endl;
+}
+
+void resta(double a, float b)
+{
+	cout << a - b << endl;
+}
+
+void resta(float a, double b)
+{
+	cout << a - b << endl;
+}
+
+//Multiplicación
+
+void mult(int a, int b)
+{
+	cout << a * b << endl;
+}
+void mult(double a, double b)
+{
+	cout << a * b << endl;
+}
+
+void mult(float a, float b)
+{
+	cout << a * b << endl;
+}
+
+void mult(double a, int b)
+{
+	cout << a * b << endl;
+}
+
+void mult(int a, double b)
+{
+	cout << a * b << endl;
+}
+
+void mult(float a, int b)
+{
+	cout << a * b << endl;
+}
+
+void mult(int a, float b)
+{
+	cout << a * b << endl;
+}
+
+void mult(double a, float b)
+{
+	cout << a * b << endl;
+}
+
+void mult(float a, double b)
+{
+	cout << a * b << endl;
+}
+
+//División
+
+void divi(int a, int b) {
+	cout << a / b << endl;
+}
+
+void divi(double a, double b)
+{
+	cout << a / b << endl;
+}
+
+void divi(float a, float b)
+{
+	cout << a / b << endl;
+}
+
+void divi(double a, int b)
+{
+	cout << a / b << endl;
+}
+
+void divi(int a, double b)
+{
+	cout << a / b << endl;
+}
+
+void divi(float a, int b)
+{
+	cout << a + b << endl;
+}
+
+void divi(int a, float b)
+{
+	cout << a / b << endl;
+}
+
+void divi(double a, float b)
+{
+	cout << a / b << endl;
+}
+
+void divi(float a, double b)
+{
+	cout << a / b << endl;
+}
+
+#endif // !Header.h
+```
+
+###MAIN
+
+```c++
+#include <iostream>
+#include "Header.h"
+using namespace std;
+
+int main()
+{
+    // Llamadas a funciones suma
+    cout << "Sumas:" << endl;
+    suma(2, 3);
+    suma(2.5, 3.5);
+    suma(2.0f, 3.0f);
+    suma(2.5, 3);
+    suma(2, 3.5);
+    suma(2.0f, 3);
+    suma(2, 3.0f);
+    suma(2.5, 3.0f);
+    suma(2.0f, 3.5);
+
+    // Llamadas a funciones resta
+    cout << "Restas:" << endl;
+    resta(10, 3);
+    resta(10.5, 3.5);
+    resta(10.0f, 3.0f);
+    resta(10.5, 3);
+    resta(10, 3.5);
+    resta(10.0f, 3);
+    resta(10, 3.0f);
+    resta(10.5, 3.0f);
+    resta(10.0f, 3.5);
+
+    // Llamadas a funciones mult
+    cout << "Multiplicaciones:" << endl;
+    mult(2, 3);
+    mult(2.5, 3.5);
+    mult(2.0f, 3.0f);
+    mult(2.5, 3);
+    mult(2, 3.5);
+    mult(2.0f, 3);
+    mult(2, 3.0f);
+    mult(2.5, 3.0f);
+    mult(2.0f, 3.5);
+
+    // Llamadas a funciones divi
+    cout << "Divisiones:" << endl;
+    divi(10, 2);
+    divi(10.5, 2.5);
+    divi(10.0f, 2.0f);
+    divi(10.5, 2);
+    divi(10, 2.5);
+    divi(10.0f, 2);
+    divi(10, 2.0f);
+    divi(10.5, 2.0f);
+    divi(10.0f, 2.5);
+}
+
+```
+
+
 ## Calculadora de Areas
 
 ```c++
