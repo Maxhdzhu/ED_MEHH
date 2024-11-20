@@ -76,7 +76,7 @@ public:
 };
 ```
 
-##Alumno
+## Alumno
 
 ```c++
 #include <iostream>
